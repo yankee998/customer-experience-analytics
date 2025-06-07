@@ -1,2 +1,7 @@
-google-play-scraper
 pandas
+google-play-scraper==1.2.3
+transformers
+torch
+numpy
+scikit-learn
+spacy
