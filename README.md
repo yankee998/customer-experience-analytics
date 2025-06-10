@@ -1,4 +1,4 @@
-# 🎆 Customer Experience Analytics Repository 🎆
+#  🎆 Customer Experience Analytics Repository 🎆
   
 Welcome to the Customer Experience Analytics project! 🌍 This repository, hosted at https://github.com/yankee998, is a comprehensive solution for analyzing customer reviews of Ethiopian banks—Commercial Bank of Ethiopia (CBE), Bank of Abyssinia (BOA), and Dashen Bank. Built with Python 3.11.9, Oracle Database 21c, and advanced visualization tools, this project offers actionable insights. Dive into this interactive guide to explore every detail! 🚀
 
@@ -24,7 +24,7 @@ Analyzed sentiments, compared banks, and suggested improvements.
 
 
 
-🔍 Click to Unfold Task Details!
+# 🔍 Click to Unfold Task Details!
 
 - **Task 1**: Used pandas to clean CSV data, removing duplicates and noise.
 - **Task 2**: Set up Oracle XE with `Banks`, `Reviews`, and `Sentiment_Analysis` tables on `DESKTOP-LPK1BP5:1521`.
@@ -33,7 +33,8 @@ Analyzed sentiments, compared banks, and suggested improvements.
 
 
 
-📂 Repository Structure
+# 📂 Repository Structure
+
 Navigate the codebase with this interactive tour! 🗺️ Each file plays a critical role in the analytics pipeline.
 
 insert_reviews.py: 📝 Inserts cleaned review data into Oracle.
@@ -44,7 +45,7 @@ requirements.txt: 📋 Lists dependencies for reproducibility.
 README.md: 📖 You’re here! Your interactive project hub.
 
 
-🛠️ Click to Explore Files in Depth!
+# 🛠️ Click to Explore Files in Depth!
 
 - **Run `insert_reviews.py`:** Populate the database with cleaned data.
   - Command: `python insert_reviews.py`
@@ -61,7 +62,7 @@ README.md: 📖 You’re here! Your interactive project hub.
 
 🚀 Getting Started
 Ready to dive in? Follow this step-by-step guide to set up and run the project! 🛠️
-🎯 Prerequisites
+## 🎯 Prerequisites
 Ensure these tools are installed and configured! 🔧
 
 Python 3.11.9: Verify with python --version in PowerShell.
@@ -78,7 +79,7 @@ Download
 
 
 
-🖥️ Installation and Setup
+# 🖥️ Installation and Setup
 
 Clone the Repository:git clone https://github.com/yankee998/Customer-Experience-Analytics.git
 cd Customer-Experience-Analytics
@@ -94,7 +95,7 @@ Set SYS password in scripts.
 
 
 
-🎮 Running the Project
+# 🎮 Running the Project
 
 Execute Scripts:
 python insert_reviews.py to load data.
@@ -110,7 +111,7 @@ Query: SELECT * FROM br_analysis.Sentiment_Analysis;
 
 
 
-📋 Click for Troubleshooting Tips!
+# 📋 Click for Troubleshooting Tips!
 
 - **Error: ORA-01017**: Recreate `br_analysis` user with `CREATE USER br_analysis IDENTIFIED BY newpassword123;`.
 - **CI/CD Failure**: Check logs, fix locally, and retry the pull request.
@@ -118,7 +119,7 @@ Query: SELECT * FROM br_analysis.Sentiment_Analysis;
 
 
 
-🌈 Features
+## 🌈 Features
 Discover the power of this project! ✨
 
 Sentiment Analysis: Classifies 300 reviews as positive, neutral, or negative using TextBlob.
@@ -127,7 +128,7 @@ Visualizations: 5 plots (bar, histogram, word cloud, line, boxplot) for insights
 Recommendations: Practical improvements like budgeting tools and crash reporting.
 
 
-📈 Click for Future Roadmap!
+## 📈 Click for Future Roadmap!
 
 - **Enhanced Visuals:** Add interactive dashboards with Plotly.
 - **Expanded Data:** Include more banks and review sources.
@@ -136,7 +137,7 @@ Recommendations: Practical improvements like budgeting tools and crash reporting
 
 
 
-📊 Key Insights
+## 📊 Key Insights
 
 Drivers: Fast customer service and user-friendly interfaces.
 Pain Points: App crashes and slow transactions.
@@ -144,7 +145,7 @@ Bank Performance: CBE (60% positive), Dashen (50%), BOA (40%).
 Recommendations: Budgeting tool and crash reporting system.
 
 
-🔎 Click to See Evidence!
+## 🔎 Click to See Evidence!
 
 - **Driver Example:** Review 2 (polarity 0.256) praises quick support.
 - **Pain Point Example:** Review 150 (polarity -1.0) reports crashes.
@@ -164,7 +165,7 @@ Push and submit a pull request.
 Note: Test CI/CD locally to avoid failures!
 
 
-📝 Click for Contribution Guidelines!
+##  Click for Contribution Guidelines!
 
 - Follow PEP 8 for Python code.
 - Add unit tests for new features.
@@ -172,14 +173,14 @@ Note: Test CI/CD locally to avoid failures!
 
 
 
-❓ Frequently Asked Questions
+## ❓ Frequently Asked Questions
 
 Q: Why Oracle?A: Chosen for its robust data management capabilities.
 Q: How to Update Bank Data?A: Edit insert_reviews.py and rerun.
 Q: Visuals Not Showing?A: Ensure insights_visuals.py generates PNG files.
 
 
-💡 Click for More FAQs!
+## 💡 Click for More FAQs!
 
 - **Q: CI/CD Issues?** Contact me with logs.
 - **Q: Missing Dashen Bank?** Ensure `Banks` table includes it.
@@ -217,7 +218,7 @@ Analyzed sentiments, visualized data.
 
 
 
-📬 Contact
+# 📬 Contact
 Have questions or suggestions? Reach out!  
 
 GitHub: yankee998  
