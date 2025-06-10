@@ -1,22 +1,20 @@
-SQL> -- Banks table
-SQL> SELECT 'CREATE TABLE Banks (bank_id NUMBER PRIMARY KEY, bank_name VARCHAR2(100) NOT NULL);' FROM dual WHERE EXISTS (SELECT 1 FROM br_analysis.Banks);
+SELECT 'CREATE TABLE Banks (bank_id NUMBER PRIMARY KEY, bank_name VARCHAR2(100) NOT NULL);' FROM dual WHERE EXISTS (SELECT 1 FROM br_analysis.Banks);
 CREATE TABLE Banks (bank_id NUMBER PRIMARY KEY, bank_name VARCHAR2(100) NOT NULL
 );                                                                              
                                                                                 
-SQL> SELECT 'INSERT INTO Banks (bank_id, bank_name) VALUES (' || bank_id || ', ''' || bank_name || ''');' FROM br_analysis.Banks;
-INSERT INTO Banks (bank_id, bank_name) VALUES (1, 'Commercial Bank of Ethiopia')
-;                                                                               
+SELECT 'INSERT INTO Banks (bank_id, bank_name) VALUES (' || bank_id || ', ''' || bank_name || ''');' FROM br_analysis.Banks;
+INSERT INTO Banks (bank_id, bank_name) VALUES (1, 'Commercial Bank of Ethiopia');                                                                               
                                                                                 
 INSERT INTO Banks (bank_id, bank_name) VALUES (2, 'Bank of Abyssinia');         
 INSERT INTO Banks (bank_id, bank_name) VALUES (3, 'Dashen Bank');               
-SQL> 
-SQL> -- Reviews table
-SQL> SELECT 'CREATE TABLE Reviews (review_id NUMBER PRIMARY KEY, bank_id NUMBER, review_text VARCHAR2(1000), rating NUMBER(1), review_date DATE, source VARCHAR2(50), FOREIGN KEY (bank_id) REFERENCES Banks(bank_id));' FROM dual WHERE EXISTS (SELECT 1 FROM br_analysis.Reviews);
+
+
+SELECT 'CREATE TABLE Reviews (review_id NUMBER PRIMARY KEY, bank_id NUMBER, review_text VARCHAR2(1000), rating NUMBER(1), review_date DATE, source VARCHAR2(50), FOREIGN KEY (bank_id) REFERENCES Banks(bank_id));' FROM dual WHERE EXISTS (SELECT 1 FROM br_analysis.Reviews);
 CREATE TABLE Reviews (review_id NUMBER PRIMARY KEY, bank_id NUMBER, review_text 
 VARCHAR2(1000), rating NUMBER(1), review_date DATE, source VARCHAR2(50), FOREIGN
  KEY (bank_id) REFERENCES Banks(bank_id));                                      
                                                                                 
-SQL> SELECT 'INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, source) VALUES (' || review_id || ', ' || bank_id || ', ''' || REPLACE(review_text, '''', '''''') || ''', ' || rating || ', TO_DATE(''' || TO_CHAR(review_date, 'YYYY-MM-DD') || ''', ''YYYY-MM-DD''), ''' || source || ''');' FROM br_analysis.Reviews;
+SELECT 'INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, source) VALUES (' || review_id || ', ' || bank_id || ', ''' || REPLACE(review_text, '''', '''''') || ''', ' || rating || ', TO_DATE(''' || TO_CHAR(review_date, 'YYYY-MM-DD') || ''', ''YYYY-MM-DD''), ''' || source || ''');' FROM br_analysis.Reviews;
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (1, 1, 'The CBE app has been highly unreliable in recent weeks. It fre
 quently fails to work properly on both Ethio Telecom and Safaricom networks, whe
@@ -131,8 +129,8 @@ us, which makes the process draw back', 3, TO_DATE('2025-04-18', 'YYYY-MM-DD'),
 'Google Play');                                                                 
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (16, 1, 'I’ve been using the CBE mobile banking app, and overall, I ap
-preciate its features. However, I’ve noticed that when I turn on the developer o
+e) VALUES (16, 1, 'Iï¿½ve been using the CBE mobile banking app, and overall, I ap
+preciate its features. However, Iï¿½ve noticed that when I turn on the developer o
 ptions on my device, the app stops functioning properly. It would be great if yo
 u could look into this issue, as I often need to access developer settings for o
 ther applications. Thank you for your attention to this matter!', 1, TO_DATE('20
@@ -153,7 +151,7 @@ cation ThankYou For Your attention to This Matter', 4, TO_DATE('2025-05-13', 'YY
 YY-MM-DD'), 'Google Play');                                                     
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (19, 1, 'In the previous, I gave 4 ¿ for this app based on my evaluati
+e) VALUES (19, 1, 'In the previous, I gave 4 ï¿½ for this app based on my evaluati
 on. This app was without biometric security and may be exposed to cheaters unexp
 ectedly. It is solved now. You can add verification security on the setting app.
  But there is something problem still with verification. It must prevent logging
@@ -194,7 +192,7 @@ oblem', 3, TO_DATE('2025-03-14', 'YYYY-MM-DD'), 'Google Play');
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (65, 1, 'The good thing is its simplicity to undertake the basic funct
 ions. Updates with improvements and fixes should have been released by now. Plea
-se fix. 5 years after last review… Issues with beneficiary are fixed. However, s
+se fix. 5 years after last reviewï¿½ Issues with beneficiary are fixed. However, s
 till unable to track transactions much less to download in appropriate formats. 
 This feature got diminished in the latest update. Please improve and fix.', 3, T
 O_DATE('2023-03-15', 'YYYY-MM-DD'), 'Google Play');                             
@@ -220,7 +218,7 @@ imes .', 4, TO_DATE('2025-05-22', 'YYYY-MM-DD'), 'Google Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (70, 1, 'Sometimes it has a nasty lag for several hour fix that , the 
-rest is ¿', 4, TO_DATE('2025-05-22', 'YYYY-MM-DD'), 'Google Play');             
+rest is ï¿½', 4, TO_DATE('2025-05-22', 'YYYY-MM-DD'), 'Google Play');             
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (71, 1, 'it is smart app but it has stoped after some period of time o
@@ -350,7 +348,7 @@ app from abroad; but these days, it kept saying "unable to connect" when I tried
 '), 'Google Play');                                                             
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (92, 1, 'Before the new version, the app was fast and merits 4 ¿. Howe
+e) VALUES (92, 1, 'Before the new version, the app was fast and merits 4 ï¿½. Howe
 ver, following the upgrade, the app is slow and takes time to reload. Apps are u
 seless without speed, so make them work.', 1, TO_DATE('2024-12-19', 'YYYY-MM-DD'
 ), 'Google Play');                                                              
@@ -369,9 +367,9 @@ al reasons', 1, TO_DATE('2025-01-21', 'YYYY-MM-DD'), 'Google Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (95, 1, 'I don''t understand the reason why this app asks me to turn o
-ff my developer options whenever I try to log into the app ¿ This issue immediat
+ff my developer options whenever I try to log into the app ï¿½ This issue immediat
 ely needs to be fixed. Why would I sacrifice my phone''s performance to use only
- this app? It''s ridiculous ¿', 2, TO_DATE('2025-01-06', 'YYYY-MM-DD'), 'Google 
+ this app? It''s ridiculous ï¿½', 2, TO_DATE('2025-01-06', 'YYYY-MM-DD'), 'Google 
 Play');                                                                         
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -406,18 +404,18 @@ firmation?', 4, TO_DATE('2024-12-16', 'YYYY-MM-DD'), 'Google Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (101, 2, 'This app is a joke. It crashes more than it works, takes for
-ever to load, and half the features are just decorative at this point. Can’t log
- in, can’t transfer money, can’t even check my balance without it bugging out. T
+ever to load, and half the features are just decorative at this point. Canï¿½t log
+ in, canï¿½t transfer money, canï¿½t even check my balance without it bugging out. T
 o the developer: Are you actually trying to make this work, or is this some kind
  of social experiment to test our patience? Did you build this in your sleep? Be
 cause it definitely looks like it. If this is your idea of a functional app, may
-be consider a different career path¿', 1, TO_DATE('2025-05-21', 'YYYY-MM-DD'), '
+be consider a different career pathï¿½', 1, TO_DATE('2025-05-21', 'YYYY-MM-DD'), '
 Google Play');                                                                  
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (102, 2, 'Hello, I’m facing a problem with the BOA Mobile app. Every t
+e) VALUES (102, 2, 'Hello, Iï¿½m facing a problem with the BOA Mobile app. Every t
 ime I enter my phone number and password, the app crashes and shows an error tha
-t says “BoaMobile closed because this app has a bug.” I tried updating, reinstal
+t says ï¿½BoaMobile closed because this app has a bug.ï¿½ I tried updating, reinstal
 ling, and clearing cache, but nothing worked. Please fix this bug in the next up
 date. I really need access to my account. Thank you.', 1, TO_DATE('2025-06-03', 
 'YYYY-MM-DD'), 'Google Play');                                                  
@@ -467,16 +465,16 @@ e) VALUES (108, 2, 'What''s wrong with App. this days? it doesn''t working prope
 rly. 1) it''s VERY SLOW & doesn''t open. it''s very Annoying. 2) most of the tim
 e it says repeatedly Please try it again or try it later but again and again it 
 doesn''t open or work. 3) repeatedly it says something went wrong then it off th
-e screen. I''ve updated the App. when it needed but nothing changed. ¿PLEASE if 
+e screen. I''ve updated the App. when it needed but nothing changed. ï¿½PLEASE if 
 it has some issues with the App. Please fix it otherwise I''m going to uninstall
  it.', 2, TO_DATE('2024-05-08', 'YYYY-MM-DD'), 'Google Play');                  
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (109, 2, 'I’m giving this app one star because there are no options be
+e) VALUES (109, 2, 'Iï¿½m giving this app one star because there are no options be
 low that. My experience has been incredibly frustrating due to the extremely lon
 g loading times, and the app even closes automatically at times. People choose m
 obile banking for its convenience, but this app is far too time-consuming, makin
-g it the worst I’ve used. I hope improvements are made to enhance the user exper
+g it the worst Iï¿½ve used. I hope improvements are made to enhance the user exper
 ience.', 1, TO_DATE('2024-12-07', 'YYYY-MM-DD'), 'Google Play');                
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -555,9 +553,9 @@ e Play');
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (28, 1, 'Two step verification update is fake (meaningless). Why becau
 se the app gives you an option of to use pin while requesting two step verificat
-ion step. ¿ This updated app is not differ than the previous one in case of secu
-rity & safegaurding users.¿¿¿¿ The other features of the app are best and easy t
-o use it.¿¿¿¿¿¿¿¿¿¿', 1, TO_DATE('2025-03-06', 'YYYY-MM-DD'), 'Google Play');   
+ion step. ï¿½ This updated app is not differ than the previous one in case of secu
+rity & safegaurding users.ï¿½ï¿½ï¿½ï¿½ The other features of the app are best and easy t
+o use it.ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', 1, TO_DATE('2025-03-06', 'YYYY-MM-DD'), 'Google Play');   
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (29, 1, 'Really! this app is more simple to use at any time in every w
@@ -668,7 +666,7 @@ INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (45, 1, 'Why on earth is CBE telling me to turn off developer mode? As
  the name clearly states, it''s for developers, not for CBE to dictate. There ar
 e countless financial apps out there that work just fine without demanding such 
-an unnecessary restriction. If your app can’t handle developer mode, that’s a yo
+an unnecessary restriction. If your app canï¿½t handle developer mode, thatï¿½s a yo
 u problem. Fix your code instead of disabling features that have absolutely noth
 ing to do with you.', 2, TO_DATE('2025-01-25', 'YYYY-MM-DD'), 'Google Play');   
                                                                                 
@@ -752,7 +750,7 @@ INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (55, 1, 'Application UI and new features are better than the previous 
 version. I found a minor bugs though. I couldn''t transfer to an account from th
 e beneficiary list, it says None Available; There is still so much to do with th
-e localization; Instead of ¿¿ it says ¿¿ and more like this; date conversion is 
+e localization; Instead of ï¿½ï¿½ it says ï¿½ï¿½ and more like this; date conversion is 
 missing also. If this minor things are fixed it will be much better.', 3, TO_DAT
 E('2020-11-05', 'YYYY-MM-DD'), 'Google Play');                                  
                                                                                 
@@ -919,7 +917,7 @@ ank. I would give it a zero but a one will suffice to get my point accross.', 1,
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (169, 2, 'please add language in the apps setting(amharic afan oromo, 
 tigniya,and others) sometimes bank to bank transfer is not available through tim
-e and even if if it is available not reachable…it is serious issue!', 1, TO_DATE
+e and even if if it is available not reachableï¿½it is serious issue!', 1, TO_DATE
 ('2025-02-15', 'YYYY-MM-DD'), 'Google Play');                                   
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -952,7 +950,7 @@ INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (175, 2, 'This app is way better than both Apollo and the old mobile b
 anking app. It''s super easy to use and loads really fast. If you already have b
 oa mobile banking before, activating it is a piece of cake. Great job on making 
-such an awesome app – keep it up !', 5, TO_DATE('2024-01-27', 'YYYY-MM-DD'), 'Go
+such an awesome app ï¿½ keep it up !', 5, TO_DATE('2024-01-27', 'YYYY-MM-DD'), 'Go
 ogle Play');                                                                    
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1103,17 +1101,17 @@ nternet connection although the internet was fine.', 1, TO_DATE('2024-07-23', 'Y
 YYY-MM-DD'), 'Google Play');                                                    
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (201, 3, 'The new mobile banking application is a major upgrade! It’s 
+e) VALUES (201, 3, 'The new mobile banking application is a major upgrade! Itï¿½s 
 incredibly user-friendly, with a clean and modern design that makes navigation s
 imple and intuitive. I really appreciate how fast it loads and how smooth the ov
 erall experience is. All essential services like balance checks, transfers, and 
 bill payments are eas y to find and use. The added security features give me pea
-ce of mind, and the app runs reliably without crashes or glitches. It’s clear a 
+ce of mind, and the app runs reliably without crashes or glitches. Itï¿½s clear a 
 lot of thought went into the user experi', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'
 ), 'Google Play');                                                              
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (202, 3, 'Dashen Super App is a game-changer! It’s fast, user-friendly
+e) VALUES (202, 3, 'Dashen Super App is a game-changer! Itï¿½s fast, user-friendly
 , and packed with features that make everyday banking and transactions super con
 venient. I love how everything I need from mobile banking to utility payments is
  all in one place. The interface is clean, and everything works smoothly. Defini
@@ -1122,7 +1120,7 @@ tely one of the best apps out there. Highly recommended!', 5, TO_DATE('2025-04-2
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (203, 3, 'I have been using the Dashen Supper app mobile banking app ,
- and overall, I appreciate its features.However,I’ve noticed that when I turn on
+ and overall, I appreciate its features.However,Iï¿½ve noticed that when I turn on
  the developer options on my device, the app stops functioning properly. It woul
 d be great if you could look into this issue, as I often need to access develope
 r settings for other applications . Thank you for your attention to this matter!
@@ -1149,7 +1147,7 @@ INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (206, 3, 'A solid step forward by Dashen Bank. The SuperApp combines e
 ssential banking features with lifestyle services, making everything accessible 
 in one place. The interface is smooth, and transactions are quick and reliable. 
-It’s clear a lot of thought went into the design and functionality. Great job!',
+Itï¿½s clear a lot of thought went into the design and functionality. Great job!',
  5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');                        
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1176,14 +1174,14 @@ ng experience. It''s fast, user-friendly, and packed with all the essential feat
 ures. The interface is clean and intuitive, making navigation easy even for firs
 t-time users. I also appreciate the added security features that give me peace o
 f mind while banking on the go. Dashen Bank has done an amazing job with this ap
-p—it’s reliable, efficient, and always improving. Highly recommended for anyone 
+pï¿½itï¿½s reliable, efficient, and always improving. Highly recommended for anyone 
 looking for seamless digital banking!', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 
 'Google Play');                                                                 
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (210, 3, 'A truly impressive app — user-friendly and a game-changer in
+e) VALUES (210, 3, 'A truly impressive app ï¿½ user-friendly and a game-changer in
  Ethiopian banking. The Dashen Super App stands out as one of the most innovativ
-e and convenient digital banking solutions in Ethiopia’s financial history. Smoo
+e and convenient digital banking solutions in Ethiopiaï¿½s financial history. Smoo
 th navigation, seamless features, and a wide range of services all in one place.
  Well done!', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');           
                                                                                 
@@ -1198,13 +1196,13 @@ INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (212, 3, '"Dashen Super App'''' is impressive with its focus on simpli
 city, speed, and quality. The user interface is clean and easy to understand. Tr
 ansactions process quickly, and the overall quality of the app is top-notch. A m
-ust-have for Dashen Bank customers. ¿¿¿ ¿¿¿ ¿¿¿ ¿¿¿¿ ¿¿¿¿', 5, TO_DATE('2025-04-
+ust-have for Dashen Bank customers. ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½', 5, TO_DATE('2025-04-
 22', 'YYYY-MM-DD'), 'Google Play');                                             
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (213, 3, 'Dashen SupApp is the most contemporary application, offering
  a great experience by enabling users to perform multiple tasks through a single
- platform—such as chatting with friends, transferring money, paying bills, and m
+ platformï¿½such as chatting with friends, transferring money, paying bills, and m
 ore. It is the first app of its kind in the Ethiopian banking industry, making i
 t a remarkable opportunity for entrepreneurs working in app-based sales and soft
 ware marketing. Good job, Dashen Bank!', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'),
@@ -1213,7 +1211,7 @@ ware marketing. Good job, Dashen Bank!', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'),
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (214, 3, 'Dashen Bank Super App is a game-changer! The user-friendly d
 esign, wide range of services, and smooth performance make it incredibly conveni
-ent for everyday banking. It’s fast, secure, and truly reflects the bank’s commi
+ent for everyday banking. Itï¿½s fast, secure, and truly reflects the bankï¿½s commi
 tment to digital excellence. Highly recommended!', 5, TO_DATE('2025-04-21', 'YYY
 Y-MM-DD'), 'Google Play');                                                      
                                                                                 
@@ -1249,8 +1247,8 @@ nsure safe and reliable Experiance effortless banking', 5, TO_DATE('2025-02-26',
  'YYYY-MM-DD'), 'Google Play');                                                 
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (219, 3, 'I’ve been using the Dashen Bank Super App for a while now, a
-nd it’s been a game-changer. The app is super fast and reliable—I’ve never had a
+e) VALUES (219, 3, 'Iï¿½ve been using the Dashen Bank Super App for a while now, a
+nd itï¿½s been a game-changer. The app is super fast and reliableï¿½Iï¿½ve never had a
 n issue with transactions being delayed. One of my favorite features is the chat
  banking, which makes it so easy to do things like check my balance or transfer 
 money just by typing a quick message. The budgeting tool is also really useful. 
@@ -1267,8 +1265,8 @@ all, I was hoping for a better experience, but I find the service lacking and in
  need of improvement.', 2, TO_DATE('2025-04-09', 'YYYY-MM-DD'), 'Google Play'); 
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (221, 3, 'This super app is a total game-changer—fast, reliable, and p
-acked with everything I need in one place. It’s seamless and super convenient. L
+e) VALUES (221, 3, 'This super app is a total game-changerï¿½fast, reliable, and p
+acked with everything I need in one place. Itï¿½s seamless and super convenient. L
 ove it!"', 5, TO_DATE('2025-04-23', 'YYYY-MM-DD'), 'Google Play');              
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1282,7 +1280,7 @@ rmance, great UI, and top-notch security. Thank you for making banking so conven
 ient!"', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');                
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (224, 3, 'I''m really impressed with this app! It’s user-friendly, run
+e) VALUES (224, 3, 'I''m really impressed with this app! Itï¿½s user-friendly, run
 s smoothly, and has all the features I need. Makes my tasks so much easier and s
 aves me a lot of time. Highly recommended!', 5, TO_DATE('2025-04-23', 'YYYY-MM-D
 D'), 'Google Play');                                                            
@@ -1310,7 +1308,7 @@ s. Its is very disappointing. It is just inconvinient, and not user friendly and
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (228, 3, 'The app is incredibly handy for managing multiple financial 
-tasks, from bill payments to managing budgets. It’s saved me a lot of time and m
+tasks, from bill payments to managing budgets. Itï¿½s saved me a lot of time and m
 ade banking way more convenient. Definitely worth checking out!', 5, TO_DATE('20
 25-04-21', 'YYYY-MM-DD'), 'Google Play');                                       
                                                                                 
@@ -1357,14 +1355,14 @@ ayment system. Also, it will connect with sellers having reasonable prices.', 5,
  TO_DATE('2025-04-22', 'YYYY-MM-DD'), 'Google Play');                           
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (235, 3, 'One of the best digital platforms I’ve used! From smooth tra
+e) VALUES (235, 3, 'One of the best digital platforms Iï¿½ve used! From smooth tra
 nsactions to a seamless shopping experience, Highly recommended', 5, TO_DATE('20
 25-04-21', 'YYYY-MM-DD'), 'Google Play');                                       
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (236, 3, 'Dashen SuperApp is a lifesaver! Banking, shopping, and bills
  in one super easy app. The new e-commerce feature is awesome and supports local
- merchants. Fast, secure, and proudly Ethiopian.Download it now—you won’t regret
+ merchants. Fast, secure, and proudly Ethiopian.Download it nowï¿½you wonï¿½t regret
  it!', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');                  
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1390,12 +1388,12 @@ commerce platform', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (241, 3, 'I have an incredible experience with Dashen super app, what 
-an amazing platform is it?. keep pioneering in technological advancement ¿¿¿', 5
+an amazing platform is it?. keep pioneering in technological advancement ï¿½ï¿½ï¿½', 5
 , TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');                          
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (242, 3, 'The user experience is seamless, and everything just works p
-erfectly right out of the box. I can’t believe how much time and effort it saves
+erfectly right out of the box. I canï¿½t believe how much time and effort it saves
  me every day.', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');        
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1408,14 +1406,14 @@ e) VALUES (244, 3, 'Excellent banking app for all your needs! Who needs a physic
 al branch when you can use Dashen Bank Super App Instead! I''ve never had an iss
 ue with anything that Dashen Bank Super App haven''t handled swiftly and resolve
 d to my satisfaction and above I don''t often write reviews but this is an app/b
-ank that I would highly recommended to everyone ¿ ¿¿', 5, TO_DATE('2025-01-22', 
+ank that I would highly recommended to everyone ï¿½ ï¿½ï¿½', 5, TO_DATE('2025-01-22', 
 'YYYY-MM-DD'), 'Google Play');                                                  
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (245, 3, 'It has a great application features from the beginning. I''m
  glad to use it even I haven''t used it yet because I haven''t activated my acco
-unt yet. But it''s simple, comprehensive, full of information, and fast. ¿¿¿ ¿¿¿
-¿: The super app has impressed me more than I expected.', 5, TO_DATE('2025-01-15
+unt yet. But it''s simple, comprehensive, full of information, and fast. ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+ï¿½: The super app has impressed me more than I expected.', 5, TO_DATE('2025-01-15
 ', 'YYYY-MM-DD'), 'Google Play');                                               
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1437,11 +1435,11 @@ s user friendly, fast, and everything works as expected. keep up the good work.'
 , 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');                       
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (249, 3, 'This is the worst mobile banking experience I’ve ever had. I
-t doesn’t work when you need it, and it randomly updates itself without warning.
- You can’t make transactions whenever you want. It’s a nightmare for anyone who 
+e) VALUES (249, 3, 'This is the worst mobile banking experience Iï¿½ve ever had. I
+t doesnï¿½t work when you need it, and it randomly updates itself without warning.
+ You canï¿½t make transactions whenever you want. Itï¿½s a nightmare for anyone who 
 relies on this as their main banking option, especially those with a lot of mone
-y in their account. I’m lucky I’m not one of them, but still, it’s infuriating n
+y in their account. Iï¿½m lucky Iï¿½m not one of them, but still, itï¿½s infuriating n
 ot being able to access your money when you need it."l', 1, TO_DATE('2025-04-07'
 , 'YYYY-MM-DD'), 'Google Play');                                                
                                                                                 
@@ -1457,8 +1455,8 @@ cure.', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'), 'Google Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (252, 3, 'Dear Users of the Dashen Bank Super App,I have been using th
-e Dashen Bank Super App for a while now, and I must say—it’s truly a game-change
-r! The app is incredibly fast and reliable; I’ve never encountered any delays wi
+e Dashen Bank Super App for a while now, and I must sayï¿½itï¿½s truly a game-change
+r! The app is incredibly fast and reliable; Iï¿½ve never encountered any delays wi
 th my transactions. One feature I absolutely love is Chat Banking. It makes ever
 yday tasks like checking my balance or transferring money as simple as sending a
  quick message. Also, the budgeting tool has been a huge help in tracking my spe
@@ -1528,8 +1526,8 @@ ogle Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (264, 3, 'I wanted to share some concerns about your Supper App. It ap
-pears to be experiencing reliability issues and isn’t performing as expected. I 
-hope this can be addressed soon to improve the user experience. One star ¿ for n
+pears to be experiencing reliability issues and isnï¿½t performing as expected. I 
+hope this can be addressed soon to improve the user experience. One star ï¿½ for n
 ow.', 1, TO_DATE('2025-03-19', 'YYYY-MM-DD'), 'Google Play');                   
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1554,7 +1552,7 @@ g well', 5, TO_DATE('2025-05-15', 'YYYY-MM-DD'), 'Google Play');
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (269, 3, 'Dashen SuperApp blends finance, shopping, and daily services
  effortlessly. The new e-commerce feature is smooth and supports local merchants
-—proud to back an Ethiopian-made solution!', 5, TO_DATE('2025-04-21', 'YYYY-MM-D
+ï¿½proud to back an Ethiopian-made solution!', 5, TO_DATE('2025-04-21', 'YYYY-MM-D
 D'), 'Google Play');                                                            
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1617,14 +1615,14 @@ iously, is it communicating with a server on Mars or something?', 5, TO_DATE('20
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (283, 3, 'It''s great! But it will be advanced if you include a captio
-n that allow customers to transfer to Telebirr account. Dashen Bank, "¿¿ ¿¿¿ ¿¿ 
-¿¿¿ ¿¿¿¿" (Always one step ahead!)', 4, TO_DATE('2025-01-15', 'YYYY-MM-DD'), 'Go
+n that allow customers to transfer to Telebirr account. Dashen Bank, "ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ 
+ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" (Always one step ahead!)', 4, TO_DATE('2025-01-15', 'YYYY-MM-DD'), 'Go
 ogle Play');                                                                    
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (284, 3, 'This app is literally the best thing ever The chat banking i
-s so easy just text and it’s done Super smooth, fast, and honestly a life saverI
-f you haven’t downloaded it yet you’re missing out big time', 5, TO_DATE('2025-0
+s so easy just text and itï¿½s done Super smooth, fast, and honestly a life saverI
+f you havenï¿½t downloaded it yet youï¿½re missing out big time', 5, TO_DATE('2025-0
 1-23', 'YYYY-MM-DD'), 'Google Play');                                           
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1654,7 +1652,7 @@ al banking, combining exceptional usability, an intuitive interface and a seamle
 ss user experience. among its standout features are the integration of QR codes,
  account statement, transaction advise, chat, transaction authentication for lim
 it thresholds, budgeting and different app in a single dashboard. Truly ahead of
- the curve ..... keep up the excellent work ¿¿', 5, TO_DATE('2025-04-21', 'YYYY-
+ the curve ..... keep up the excellent work ï¿½ï¿½', 5, TO_DATE('2025-04-21', 'YYYY-
 MM-DD'), 'Google Play');                                                        
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1683,7 +1681,7 @@ le Play');
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (295, 3, 'The app is very backward and doesn''t always work. If it wor
-ks three hours out of 24 hours it''s great!¿', 1, TO_DATE('2025-04-14', 'YYYY-MM
+ks three hours out of 24 hours it''s great!ï¿½', 1, TO_DATE('2025-04-14', 'YYYY-MM
 -DD'), 'Google Play');                                                          
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
@@ -1692,7 +1690,7 @@ Secure, reliable, and packed with features I use daily', 5, TO_DATE('2025-04-21'
 , 'YYYY-MM-DD'), 'Google Play');                                                
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (297, 3, 'one of the best digital platforms I’ve used! From smooth tra
+e) VALUES (297, 3, 'one of the best digital platforms Iï¿½ve used! From smooth tra
 nsactions to a seamless shopping experie', 5, TO_DATE('2025-04-21', 'YYYY-MM-DD'
 ), 'Google Play');                                                              
                                                                                 
@@ -1720,12 +1718,12 @@ e issue on connectivity. Connectivity is fine and the proof is that this review
 is posted.', 1, TO_DATE('2024-04-15', 'YYYY-MM-DD'), 'Google Play');            
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (114, 2, 'Terrible Bank Experience It’s unbelievable that with all the
+e) VALUES (114, 2, 'Terrible Bank Experience Itï¿½s unbelievable that with all the
  modern technology, this bank still struggles with even basic transactions. The 
 app constantly crashes, services are limited, and every time I try to transfer m
-oney or load Telebirr, there’s a huge delay. I have to wait 5 days for failed tr
-ansactions to be refunded! Even USSD is unreliable. They’ve put me in embarrassi
-ng situations countless times, and customer care never fixes anything. I’ve swit
+oney or load Telebirr, thereï¿½s a huge delay. I have to wait 5 days for failed tr
+ansactions to be refunded! Even USSD is unreliable. Theyï¿½ve put me in embarrassi
+ng situations countless times, and customer care never fixes anything. Iï¿½ve swit
 ched banks, and you should too!', 1, TO_DATE('2024-10-14', 'YYYY-MM-DD'), 'Googl
 e Play');                                                                       
                                                                                 
@@ -1793,8 +1791,8 @@ crush so much and it take the bank so long to fix the bug', 1, TO_DATE('2025-04-
 08', 'YYYY-MM-DD'), 'Google Play');                                             
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
-e) VALUES (123, 2, 'This app is incredibly frustrating to use. It’s filled with 
-issues that make it difficult to navigate and complete tasks efficiently. I’ve n
+e) VALUES (123, 2, 'This app is incredibly frustrating to use. Itï¿½s filled with 
+issues that make it difficult to navigate and complete tasks efficiently. Iï¿½ve n
 ever encountered such a poorly designed banking application before. It needs sig
 nificant improvements to enhance user experience. It deserves a vey low rating.'
 , 1, TO_DATE('2024-09-26', 'YYYY-MM-DD'), 'Google Play');                       
@@ -1869,7 +1867,7 @@ e) VALUES (132, 2, 'Be careful of using this app to transfer large sums of money
 oney to Telebirr. The *815# works but what''s the use of an app if we''re using 
 USSD. It will refund your mobile top up days after failing to top up but I would
 n''t want to risk that. I''m a big fan of BoA but I wouldn''t recommend this app
-. ¿', 1, TO_DATE('2024-05-15', 'YYYY-MM-DD'), 'Google Play');                   
+. ï¿½', 1, TO_DATE('2024-05-15', 'YYYY-MM-DD'), 'Google Play');                   
                                                                                 
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (133, 2, 'Very poor app. It crashes every time, doesn''t load properly
