@@ -1,9 +1,9 @@
 SQL> -- Banks table
-SQL> SELECT 'CREATE TABLE Banks (bank_id NUMBER PRIMARY KEY, bank_name VARCHAR2(100) NOT NULL);' FROM dual;
+SQL> SELECT 'CREATE TABLE Banks (bank_id NUMBER PRIMARY KEY, bank_name VARCHAR2(100) NOT NULL);' FROM dual WHERE EXISTS (SELECT 1 FROM br_analysis.Banks);
 CREATE TABLE Banks (bank_id NUMBER PRIMARY KEY, bank_name VARCHAR2(100) NOT NULL
 );                                                                              
                                                                                 
-SQL> SELECT 'INSERT INTO Banks (bank_id, bank_name) VALUES (' || bank_id || ', ''' || bank_name || ''');' FROM Banks;
+SQL> SELECT 'INSERT INTO Banks (bank_id, bank_name) VALUES (' || bank_id || ', ''' || bank_name || ''');' FROM br_analysis.Banks;
 INSERT INTO Banks (bank_id, bank_name) VALUES (1, 'Commercial Bank of Ethiopia')
 ;                                                                               
                                                                                 
@@ -11,12 +11,12 @@ INSERT INTO Banks (bank_id, bank_name) VALUES (2, 'Bank of Abyssinia');
 INSERT INTO Banks (bank_id, bank_name) VALUES (3, 'Dashen Bank');               
 SQL> 
 SQL> -- Reviews table
-SQL> SELECT 'CREATE TABLE Reviews (review_id NUMBER PRIMARY KEY, bank_id NUMBER, review_text VARCHAR2(1000), rating NUMBER(1), review_date DATE, source VARCHAR2(50), FOREIGN KEY (bank_id) REFERENCES Banks(bank_id));' FROM dual;
+SQL> SELECT 'CREATE TABLE Reviews (review_id NUMBER PRIMARY KEY, bank_id NUMBER, review_text VARCHAR2(1000), rating NUMBER(1), review_date DATE, source VARCHAR2(50), FOREIGN KEY (bank_id) REFERENCES Banks(bank_id));' FROM dual WHERE EXISTS (SELECT 1 FROM br_analysis.Reviews);
 CREATE TABLE Reviews (review_id NUMBER PRIMARY KEY, bank_id NUMBER, review_text 
 VARCHAR2(1000), rating NUMBER(1), review_date DATE, source VARCHAR2(50), FOREIGN
  KEY (bank_id) REFERENCES Banks(bank_id));                                      
                                                                                 
-SQL> SELECT 'INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, source) VALUES (' || review_id || ', ' || bank_id || ', ''' || REPLACE(review_text, '''', '''''') || ''', ' || rating || ', TO_DATE(''' || TO_CHAR(review_date, 'YYYY-MM-DD') || ''', ''YYYY-MM-DD''), ''' || source || ''');' FROM Reviews;
+SQL> SELECT 'INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, source) VALUES (' || review_id || ', ' || bank_id || ', ''' || REPLACE(review_text, '''', '''''') || ''', ' || rating || ', TO_DATE(''' || TO_CHAR(review_date, 'YYYY-MM-DD') || ''', ''YYYY-MM-DD''), ''' || source || ''');' FROM br_analysis.Reviews;
 INSERT INTO Reviews (review_id, bank_id, review_text, rating, review_date, sourc
 e) VALUES (1, 1, 'The CBE app has been highly unreliable in recent weeks. It fre
 quently fails to work properly on both Ethio Telecom and Safaricom networks, whe
