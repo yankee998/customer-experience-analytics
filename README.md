@@ -1,7 +1,9 @@
-              🎆 Customer Experience Analytics Repository 🎆
+# 🎆 Customer Experience Analytics Repository 🎆
+  
 Welcome to the Customer Experience Analytics project! 🌍 This repository, hosted at https://github.com/yankee998, is a comprehensive solution for analyzing customer reviews of Ethiopian banks—Commercial Bank of Ethiopia (CBE), Bank of Abyssinia (BOA), and Dashen Bank. Built with Python 3.11.9, Oracle Database 21c, and advanced visualization tools, this project offers actionable insights. Dive into this interactive guide to explore every detail! 🚀
 
-🌟 Project Overview
+# 🌟 Project Overview
+
 This repository chronicles a step-by-step journey to transform raw review data into strategic insights. Each task is committed to a dedicated branch, ensuring a clear development trail. Click below to explore! 📋
 
 Task 1: Data Collection and Cleaning ✅  
